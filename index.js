@@ -109,7 +109,7 @@ module.exports = function supersorc(mod) {
 		cid = event.gameId
 	})
 
-	mod.hook('S_ABNORMALITY_BEGIN', 5, (event) => {
+	mod.hook('S_ABNORMALITY_BEGIN', 4, (event) => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'sorcerer') return		
 		if(event.target==mod.game.me.gameId && event.id==mb_abnormality_id) {
@@ -131,7 +131,7 @@ module.exports = function supersorc(mod) {
 		}		
 	})	
 	
-	mod.hook('S_SKILL_CATEGORY', 4, event => {
+	mod.hook('S_SKILL_CATEGORY', 3, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'sorcerer') return
 		if(event.category==fusion_category) {
@@ -256,7 +256,7 @@ module.exports = function supersorc(mod) {
 		}		
 	})
 
-	mod.hook('S_SPAWN_NPC', 12, event => {
+	mod.hook('S_SPAWN_NPC', 11, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'sorcerer') return		
 		monsters.push({ gameId: event.gameId, loc: event.loc, w: event.w })
@@ -341,7 +341,7 @@ module.exports = function supersorc(mod) {
 	})
 
 
-	mod.hook('S_EACH_SKILL_RESULT', 15, event => {
+	mod.hook('S_EACH_SKILL_RESULT', 14, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'sorcerer') return
 		if(event.source!=mod.game.me.gameId && event.owner!=mod.game.me.gameId) return		
@@ -418,7 +418,7 @@ module.exports = function supersorc(mod) {
 		}
 		return false*/
 	})			
-	mod.hook('S_PLAYER_STAT_UPDATE', 17, event => {
+	mod.hook('S_PLAYER_STAT_UPDATE', 14, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'sorcerer') return
 		stacks = 0
